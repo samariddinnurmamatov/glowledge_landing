@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
+/* Force class-based dark mode (required for next-themes) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Design tokens ─────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg:      #f8fafc;
+  --bg2:     #ffffff;
+  --bg3:     #f1f5f9;
+  --border:  rgba(15,23,42,0.10);
+  --text:    #0f172a;
+  --text2:   #334155;
+  --text3:   #64748b;
+  --surface: rgba(255,255,255,0.95);
+  --indigo:  #6366f1;
+  --purple:  #8b5cf6;
+  --cyan:    #06b6d4;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --bg:      #07070f;
+  --bg2:     #0c0c18;
+  --bg3:     #11111e;
+  --border:  rgba(255,255,255,0.08);
+  --text:    #f1f5f9;
+  --text2:   #cbd5e1;
+  --text3:   #94a3b8;
+  --surface: rgba(255,255,255,0.04);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ── Base ──────────────────────────────────── */
+*,*::before,*::after { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-geist-sans), -apple-system, 'Segoe UI', sans-serif;
+  transition: background 0.3s, color 0.3s;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* ── Gradient text ─────────────────────────── */
+.grad-text,
+.gradient-text {
+  background: linear-gradient(135deg,#6366f1,#8b5cf6,#06b6d4);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+/* ── Cards ──────────────────────────────────── */
+.card-base,
+.glass-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.card-base:hover,
+.glass-card:hover {
+  border-color: rgba(99,102,241,0.3);
+  box-shadow: 0 8px 40px rgba(99,102,241,0.10);
+  transform: translateY(-2px);
+}
+
+/* ── Section backgrounds ──────────────────── */
+.section-alt {
+  background: var(--bg3);
+}
+
+/* ── Animations ────────────────────────────── */
+@keyframes float {
+  0%,100%{ transform:translateY(0) }
+  50%    { transform:translateY(-10px) }
+}
+@keyframes gradMove {
+  0%,100%{ background-position:0% 50% }
+  50%    { background-position:100% 50% }
+}
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px) }
+  to   { opacity:1; transform:translateY(0) }
+}
+@keyframes spin-slow {
+  to { transform:rotate(360deg) }
+}
+@keyframes blob {
+  0%,100% { transform: translate(0px,0px) scale(1); }
+  33%     { transform: translate(30px,-50px) scale(1.05); }
+  66%     { transform: translate(-20px,20px) scale(0.95); }
+}
+@keyframes gradient-x {
+  0%,100% { background-position: 0% 50%; }
+  50%     { background-position: 100% 50%; }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.anim-float        { animation: float 4s ease-in-out infinite; }
+.animate-float     { animation: float 4s ease-in-out infinite; }
+.anim-grad         { background-size:200% 200%; animation: gradMove 5s ease infinite; }
+.animate-blob      { animation: blob 8s ease-in-out infinite; }
+.animate-gradient-x { background-size: 200% auto; animation: gradient-x 3s ease infinite; }
+
+/* ── Scrollbar ─────────────────────────────── */
+::-webkit-scrollbar { width:5px }
+::-webkit-scrollbar-thumb { background:rgba(99,102,241,.4); border-radius:99px }
+::selection { background:rgba(99,102,241,.2) }
