@@ -7,6 +7,8 @@ import HowItWorks from "@/components/HowItWorks";
 import Pricing from "@/components/Pricing";
 import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
+import Blog from "@/components/Blog";
+import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -22,6 +24,8 @@ export default function Home() {
       <Pricing />
       <Team />
       <Testimonials />
+      <Blog />
+      <FAQ />
       <CTA />
       <Footer />
     </main>
