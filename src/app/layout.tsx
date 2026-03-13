@@ -3,16 +3,18 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import { LangProvider } from "@/context/LangContext";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geist = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Glowledge — O'zbekistonning #1 AI Platformasi",
+  title: "Glowledge — O'zbekistonning #1 AI Ekotizimi",
   description:
-    "Glowledge AI ekotizimi: prezentatsiya, hujjat, insho, kurs ishi va boshqalarni soniyalar ichida yarating.",
+    "Glowledge AI ekotizimi: prezentatsiya, hujjat, insho, kurs ishi va 20+ turdagi kontent soniyalar ichida. SoddaAI, AI Slide Bot, Presenton va ko'proq.",
   openGraph: {
-    title: "Glowledge — O'zbekistonning #1 AI Platformasi",
-    description: "AI bilan kontent yarating: prezentatsiya, hujjat, insho va boshqalar.",
+    title: "Glowledge — O'zbekistonning #1 AI Ekotizimi",
+    description: "5 ta AI mahsulot, 280K+ foydalanuvchi, UZ · RU · EN qo'llab-quvvatlash.",
     type: "website",
   },
 };
@@ -20,9 +22,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="uz" suppressHydrationWarning>
-      <body className={geist.variable}>
+      <body className={geist.variable} style={{ background: "var(--bg)", color: "var(--text)" }}>
         <ThemeProvider>
-          <LangProvider>{children}</LangProvider>
+          <LangProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </LangProvider>
         </ThemeProvider>
       </body>
     </html>

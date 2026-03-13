@@ -94,11 +94,18 @@ const posts: {
   },
 ];
 
+const MONTHS: Record<Lang, string[]> = {
+  uz: ["yanvar","fevral","mart","aprel","may","iyun","iyul","avgust","sentabr","oktabr","noyabr","dekabr"],
+  ru: ["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"],
+  en: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+};
+
 function formatDate(dateStr: string, lang: Lang) {
-  const d = new Date(dateStr);
-  const opts: Intl.DateTimeFormatOptions = { day: "numeric", month: "long", year: "numeric" };
-  const locale = lang === "uz" ? "uz-UZ" : lang === "ru" ? "ru-RU" : "en-US";
-  try { return d.toLocaleDateString(locale, opts); } catch { return dateStr; }
+  const [y, m, d] = dateStr.split("-").map(Number);
+  const month = MONTHS[lang][m - 1];
+  if (lang === "ru") return `${d} ${month} ${y}`;
+  if (lang === "uz") return `${d}-${month}, ${y}`;
+  return `${month} ${d}, ${y}`;
 }
 
 export default function Blog() {
