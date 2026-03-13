@@ -27,15 +27,33 @@ export default function HowItWorks() {
             style={{ background: "linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4)", opacity: 0.3 }}
           />
 
+          {(() => {
+            const stepColors = [
+              { from: "#6366f1", to: "#8b5cf6", shadow: "rgba(99,102,241,0.45)" },
+              { from: "#10b981", to: "#059669", shadow: "rgba(16,185,129,0.45)" },
+              { from: "#06b6d4", to: "#3b82f6", shadow: "rgba(6,182,212,0.45)" },
+            ];
+            return (
           <div className="grid md:grid-cols-3 gap-8">
-            {t.howItWorks.steps.map((step, i) => (
+            {t.howItWorks.steps.map((step, i) => {
+              const sc = stepColors[i] ?? stepColors[0];
+              return (
               <div key={i} className="relative flex flex-col items-center text-center group">
                 {/* Step number */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-xl shadow-indigo-500/25 group-hover:scale-110 transition-transform duration-300 z-10 relative">
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 z-10 relative"
+                    style={{
+                      background: `linear-gradient(135deg, ${sc.from}, ${sc.to})`,
+                      boxShadow: `0 8px 24px ${sc.shadow}`,
+                    }}
+                  >
                     <span className="text-xl font-black text-white">{step.step}</span>
                   </div>
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
+                  <div
+                    className="absolute inset-0 rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity"
+                    style={{ background: `linear-gradient(135deg, ${sc.from}, ${sc.to})` }}
+                  />
                 </div>
 
                 <div
@@ -57,8 +75,11 @@ export default function HowItWorks() {
                   </div>
                 )}
               </div>
-            ))}
+            );
+            })}
           </div>
+            );
+          })()}
         </div>
 
         {/* Demo banner */}

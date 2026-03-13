@@ -61,7 +61,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-x-hidden pt-24 pb-20"
+      className="relative flex flex-col items-center pt-28 pb-20"
       style={{ background: "var(--bg)" }}
     >
       {/* Grid background */}
@@ -203,12 +203,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-5 h-8 rounded-full border-2 flex items-start justify-center p-1" style={{ borderColor: "var(--text3)" }}>
-          <div className="w-1 h-2 rounded-full" style={{ background: "var(--text3)" }} />
-        </div>
-      </div>
     </section>
   );
 }

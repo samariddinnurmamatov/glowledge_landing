@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
+import CompanyIntro from "@/components/CompanyIntro";
 import Products from "@/components/Products";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
@@ -15,15 +16,16 @@ export default function Home() {
     <main>
       <Hero />
       <Stats />
+      <CompanyIntro />
       <Products />
       <Features />
       <HowItWorks />
       <Audiences />
       <Testimonials />
       <Pricing />
-      <Blog />
       <FAQ />
       <CTA />
+      <Blog />
     </main>
   );
 }
