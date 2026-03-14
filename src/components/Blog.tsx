@@ -171,55 +171,55 @@ export default function Blog() {
           >
             {/* Cover */}
             <div
-              className="relative flex items-center justify-center flex-shrink-0"
+              className="relative flex flex-col items-start justify-end flex-shrink-0 overflow-hidden"
               style={{
-                height: 200,
-                background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+                height: 220,
+                background: "linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4c1d95 100%)",
               }}
             >
-              {/* Subtle dot grid */}
+              {/* Grid lines */}
               <div
                 className="absolute inset-0"
                 style={{
-                  backgroundImage: "radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1px)",
-                  backgroundSize: "28px 28px",
+                  backgroundImage:
+                    "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
+                  backgroundSize: "40px 40px",
                 }}
               />
-              {/* Soft glow */}
+              {/* Glow orbs */}
+              <div className="absolute top-0 right-0 w-56 h-56 rounded-full" style={{ background: "radial-gradient(circle, rgba(139,92,246,0.4), transparent 70%)", filter: "blur(40px)" }} />
+              <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full" style={{ background: "radial-gradient(circle, rgba(99,102,241,0.35), transparent 70%)", filter: "blur(30px)" }} />
+
+              {/* Icon — top right */}
               <div
-                className="absolute w-48 h-48 rounded-full"
-                style={{ background: "rgba(255,255,255,0.08)", filter: "blur(50px)" }}
-              />
-              {/* Icon */}
-              <div
-                className="relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-transform duration-200"
-                style={{
-                  background: "rgba(255,255,255,0.15)",
-                  border: "1px solid rgba(255,255,255,0.25)",
-                  backdropFilter: "blur(8px)",
-                }}
+                className="absolute top-5 right-5 w-12 h-12 rounded-2xl flex items-center justify-center"
+                style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)" }}
               >
-                <FeaturedIcon className="w-8 h-8 text-white" strokeWidth={1.6} />
+                <FeaturedIcon className="w-6 h-6 text-white" strokeWidth={1.8} />
+              </div>
+
+              {/* Tag + title on cover */}
+              <div className="relative z-10 p-6 w-full">
+                <span
+                  className="inline-block text-xs font-semibold px-2.5 py-1 rounded-md mb-3"
+                  style={{ background: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.9)" }}
+                >
+                  {featured.tag[lang]}
+                </span>
+                <p className="text-white font-bold text-base leading-snug line-clamp-2 max-w-xs" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.4)" }}>
+                  {featured.title[lang]}
+                </p>
               </div>
             </div>
 
             {/* Content */}
             <div className="flex flex-col flex-1 p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <span
-                  className="text-xs font-semibold px-2.5 py-1 rounded-md"
-                  style={{ background: "rgba(99,102,241,0.1)", color: "var(--indigo)" }}
-                >
-                  {featured.tag[lang]}
-                </span>
+              <div className="flex items-center gap-2 mb-3">
                 <span className="flex items-center gap-1.5 text-xs" style={{ color: "var(--text3)" }}>
                   <Clock className="w-3 h-3" />
                   {featured.readTime[lang]}
                 </span>
               </div>
-              <h3 className="text-lg font-semibold leading-snug mb-3" style={{ color: "var(--text)" }}>
-                {featured.title[lang]}
-              </h3>
               <p className="text-sm leading-relaxed flex-1" style={{ color: "var(--text3)" }}>
                 {featured.excerpt[lang]}
               </p>
