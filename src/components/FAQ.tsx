@@ -111,7 +111,7 @@ export default function FAQ() {
 
   return (
     <section className="py-24 px-4 sm:px-6" style={{ background: "var(--bg)" }}>
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <div

@@ -9,22 +9,15 @@ type Lang = "uz" | "ru" | "en";
 const posts: {
   slug: string;
   tag: Record<Lang, string>;
-  tagColor: string;
-  tagTextColor: string;
   title: Record<Lang, string>;
   excerpt: Record<Lang, string>;
   readTime: Record<Lang, string>;
   date: string;
-  gradientFrom: string;
-  gradientTo: string;
-  shadowColor: string;
   icon: React.ElementType;
 }[] = [
   {
     slug: "ai-prezentatsiya-yaratish",
     tag: { uz: "Qo'llanma", ru: "Руководство", en: "Guide" },
-    tagColor: "rgba(99,102,241,0.12)",
-    tagTextColor: "#818cf8",
     title: {
       uz: "AI bilan 30 soniyada professional prezentatsiya yaratish",
       ru: "Создание профессиональной презентации с ИИ за 30 секунд",
@@ -37,16 +30,11 @@ const posts: {
     },
     readTime: { uz: "3 daqiqa", ru: "3 минуты", en: "3 min" },
     date: "2026-03-10",
-    gradientFrom: "#6366f1",
-    gradientTo: "#8b5cf6",
-    shadowColor: "rgba(99,102,241,0.45)",
     icon: LayoutTemplate,
   },
   {
     slug: "kurs-ishi-ai",
     tag: { uz: "Maslahat", ru: "Советы", en: "Tips" },
-    tagColor: "rgba(16,185,129,0.12)",
-    tagTextColor: "#34d399",
     title: {
       uz: "Kurs ishini AI bilan yozish: 5 asosiy qadam",
       ru: "Написание курсовой работы с ИИ: 5 ключевых шагов",
@@ -59,16 +47,11 @@ const posts: {
     },
     readTime: { uz: "5 daqiqa", ru: "5 минут", en: "5 min" },
     date: "2026-03-07",
-    gradientFrom: "#10b981",
-    gradientTo: "#059669",
-    shadowColor: "rgba(16,185,129,0.45)",
     icon: GraduationCap,
   },
   {
     slug: "presenton-docker",
     tag: { uz: "Texnik", ru: "Технический", en: "Technical" },
-    tagColor: "rgba(245,158,11,0.12)",
-    tagTextColor: "#fbbf24",
     title: {
       uz: "Presenton'ni Docker bilan o'z serveringizda o'rnatish",
       ru: "Установка Presenton с Docker на своём сервере",
@@ -81,16 +64,11 @@ const posts: {
     },
     readTime: { uz: "8 daqiqa", ru: "8 минут", en: "8 min" },
     date: "2026-03-04",
-    gradientFrom: "#f59e0b",
-    gradientTo: "#d97706",
-    shadowColor: "rgba(245,158,11,0.45)",
     icon: Server,
   },
   {
     slug: "uzbekiston-ai-trend",
     tag: { uz: "Yangilik", ru: "Новости", en: "News" },
-    tagColor: "rgba(236,72,153,0.12)",
-    tagTextColor: "#f472b6",
     title: {
       uz: "O'zbekistonda AI texnologiyalari: 2026 yil tendensiyalari",
       ru: "AI технологии в Узбекистане: тенденции 2026 года",
@@ -103,9 +81,6 @@ const posts: {
     },
     readTime: { uz: "4 daqiqa", ru: "4 минуты", en: "4 min" },
     date: "2026-03-01",
-    gradientFrom: "#ec4899",
-    gradientTo: "#8b5cf6",
-    shadowColor: "rgba(236,72,153,0.45)",
     icon: TrendingUp,
   },
 ];
@@ -134,7 +109,7 @@ export default function Blog() {
     en: "Useful articles about AI and content creation",
   }[lang];
   const readMore = { uz: "O'qish", ru: "Читать", en: "Read" }[lang];
-  const allPosts = { uz: "Barcha maqolalar →", ru: "Все статьи →", en: "All articles →" }[lang];
+  const allPosts = { uz: "Barcha maqolalar", ru: "Все статьи", en: "All articles" }[lang];
 
   const featured = posts[0];
   const FeaturedIcon = featured.icon;
@@ -147,16 +122,20 @@ export default function Blog() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
           <div>
             <div
-              className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-4 border"
-              style={{ background: "rgba(99,102,241,0.08)", borderColor: "rgba(99,102,241,0.2)", color: "#818cf8" }}
+              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-5 border"
+              style={{
+                background: "rgba(99,102,241,0.08)",
+                borderColor: "rgba(99,102,241,0.18)",
+                color: "var(--indigo)",
+              }}
             >
-              <TrendingUp className="w-4 h-4" />
-              <span className="text-sm font-semibold">{heading}</span>
+              <TrendingUp className="w-3.5 h-3.5" />
+              <span className="text-xs font-semibold tracking-wide uppercase">{heading}</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold" style={{ color: "var(--text)" }}>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight" style={{ color: "var(--text)" }}>
               {heading}
             </h2>
-            <p className="text-lg mt-3" style={{ color: "var(--text3)" }}>
+            <p className="text-base mt-2" style={{ color: "var(--text3)" }}>
               {subheading}
             </p>
           </div>
@@ -166,79 +145,88 @@ export default function Blog() {
             style={{ color: "var(--indigo)" }}
           >
             {allPosts}
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
-        {/* Grid: 1 big featured + 3 small */}
-        <div className="grid lg:grid-cols-2 gap-6">
+        {/* Grid: featured left + 3 cards right — equal height */}
+        <div className="grid lg:grid-cols-2 gap-5 items-stretch">
 
           {/* ── Featured post ── */}
           <Link
             href={`/blog/${featured.slug}`}
-            className="group relative overflow-hidden rounded-3xl border flex flex-col transition-all duration-300 hover:-translate-y-1"
-            style={{ background: "var(--surface)", borderColor: "var(--border)" }}
+            className="group flex flex-col rounded-2xl border overflow-hidden transition-all duration-200 hover:-translate-y-0.5"
+            style={{
+              background: "var(--surface)",
+              borderColor: "var(--border)",
+            }}
             onMouseEnter={e => {
-              (e.currentTarget as HTMLElement).style.borderColor = `${featured.gradientFrom}55`;
-              (e.currentTarget as HTMLElement).style.boxShadow = `0 16px 48px ${featured.shadowColor.replace("0.45","0.15")}`;
+              (e.currentTarget as HTMLElement).style.borderColor = "rgba(99,102,241,0.35)";
+              (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 40px rgba(99,102,241,0.1)";
             }}
             onMouseLeave={e => {
               (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
               (e.currentTarget as HTMLElement).style.boxShadow = "none";
             }}
           >
-            {/* Cover with gradient + grid + centered icon */}
+            {/* Cover */}
             <div
-              className="h-52 relative overflow-hidden flex items-center justify-center"
-              style={{ background: `linear-gradient(135deg, ${featured.gradientFrom}, ${featured.gradientTo})` }}
+              className="relative flex items-center justify-center flex-shrink-0"
+              style={{
+                height: 200,
+                background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+              }}
             >
-              {/* Subtle grid overlay */}
+              {/* Subtle dot grid */}
               <div
-                className="absolute inset-0 opacity-15"
+                className="absolute inset-0"
                 style={{
-                  backgroundImage: "linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)",
-                  backgroundSize: "36px 36px",
+                  backgroundImage: "radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1px)",
+                  backgroundSize: "28px 28px",
                 }}
               />
-              {/* Glow blob */}
+              {/* Soft glow */}
               <div
-                className="absolute w-40 h-40 rounded-full"
-                style={{ background: "rgba(255,255,255,0.15)", filter: "blur(40px)" }}
+                className="absolute w-48 h-48 rounded-full"
+                style={{ background: "rgba(255,255,255,0.08)", filter: "blur(50px)" }}
               />
-              {/* Icon box */}
+              {/* Icon */}
               <div
-                className="relative z-10 w-20 h-20 rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                className="relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-transform duration-200"
                 style={{
-                  background: "rgba(255,255,255,0.18)",
-                  backdropFilter: "blur(12px)",
-                  border: "1.5px solid rgba(255,255,255,0.35)",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.15)",
+                  background: "rgba(255,255,255,0.15)",
+                  border: "1px solid rgba(255,255,255,0.25)",
+                  backdropFilter: "blur(8px)",
                 }}
               >
-                <FeaturedIcon className="w-9 h-9 text-white" strokeWidth={1.8} />
+                <FeaturedIcon className="w-8 h-8 text-white" strokeWidth={1.6} />
               </div>
             </div>
 
             {/* Content */}
-            <div className="flex flex-col flex-1 p-7">
+            <div className="flex flex-col flex-1 p-6">
               <div className="flex items-center gap-3 mb-4">
                 <span
-                  className="text-xs font-semibold px-3 py-1 rounded-full"
-                  style={{ background: featured.tagColor, color: featured.tagTextColor }}
+                  className="text-xs font-semibold px-2.5 py-1 rounded-md"
+                  style={{ background: "rgba(99,102,241,0.1)", color: "var(--indigo)" }}
                 >
                   {featured.tag[lang]}
                 </span>
-                <span className="flex items-center gap-1 text-xs" style={{ color: "var(--text3)" }}>
+                <span className="flex items-center gap-1.5 text-xs" style={{ color: "var(--text3)" }}>
                   <Clock className="w-3 h-3" />
                   {featured.readTime[lang]}
                 </span>
               </div>
-              <h3 className="text-xl font-bold leading-snug mb-3" style={{ color: "var(--text)" }}>
+              <h3 className="text-lg font-semibold leading-snug mb-3" style={{ color: "var(--text)" }}>
                 {featured.title[lang]}
               </h3>
-              <p className="text-sm leading-relaxed flex-1 mb-6" style={{ color: "var(--text3)" }}>
+              <p className="text-sm leading-relaxed flex-1" style={{ color: "var(--text3)" }}>
                 {featured.excerpt[lang]}
               </p>
-              <div className="flex items-center justify-between pt-4 border-t" style={{ borderColor: "var(--border)" }}>
+              <div
+                className="flex items-center justify-between mt-5 pt-4 border-t"
+                style={{ borderColor: "var(--border)" }}
+              >
                 <span className="text-xs" style={{ color: "var(--text3)" }}>
                   {formatDate(featured.date, lang)}
                 </span>
@@ -253,57 +241,63 @@ export default function Blog() {
             </div>
           </Link>
 
-          {/* ── Small posts ── */}
-          <div className="flex flex-col gap-4">
+          {/* ── Small posts — fill full height ── */}
+          <div className="flex flex-col gap-4 h-full">
             {posts.slice(1).map((post) => {
               const PostIcon = post.icon;
               return (
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group relative overflow-hidden rounded-2xl border flex gap-5 p-5 transition-all duration-300 hover:-translate-y-0.5"
-                  style={{ background: "var(--surface)", borderColor: "var(--border)" }}
+                  className="group flex gap-4 rounded-2xl border p-5 flex-1 transition-all duration-200 hover:-translate-y-0.5"
+                  style={{
+                    background: "var(--surface)",
+                    borderColor: "var(--border)",
+                    minHeight: 0,
+                  }}
                   onMouseEnter={e => {
-                    (e.currentTarget as HTMLElement).style.borderColor = `${post.gradientFrom}44`;
-                    (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 28px ${post.shadowColor.replace("0.45","0.12")}`;
+                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(99,102,241,0.3)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(99,102,241,0.08)";
                   }}
                   onMouseLeave={e => {
                     (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
                     (e.currentTarget as HTMLElement).style.boxShadow = "none";
                   }}
                 >
-                  {/* Vibrant icon box */}
+                  {/* Icon */}
                   <div
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
+                    className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
                     style={{
-                      background: `linear-gradient(135deg, ${post.gradientFrom}, ${post.gradientTo})`,
-                      boxShadow: `0 6px 20px ${post.shadowColor}`,
+                      background: "rgba(99,102,241,0.1)",
+                      border: "1px solid rgba(99,102,241,0.15)",
                     }}
                   >
-                    <PostIcon className="w-6 h-6 text-white" strokeWidth={1.8} />
+                    <PostIcon className="w-5 h-5" style={{ color: "var(--indigo)" }} strokeWidth={1.7} />
                   </div>
 
                   {/* Text */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span
-                        className="text-xs font-semibold px-2 py-0.5 rounded-full"
-                        style={{ background: post.tagColor, color: post.tagTextColor }}
+                  <div className="flex-1 min-w-0 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span
+                          className="text-xs font-semibold px-2 py-0.5 rounded-md"
+                          style={{ background: "rgba(99,102,241,0.1)", color: "var(--indigo)" }}
+                        >
+                          {post.tag[lang]}
+                        </span>
+                        <span className="flex items-center gap-1 text-xs" style={{ color: "var(--text3)" }}>
+                          <Clock className="w-3 h-3" />
+                          {post.readTime[lang]}
+                        </span>
+                      </div>
+                      <h3
+                        className="text-sm font-semibold leading-snug"
+                        style={{ color: "var(--text)" }}
                       >
-                        {post.tag[lang]}
-                      </span>
-                      <span className="flex items-center gap-1 text-xs" style={{ color: "var(--text3)" }}>
-                        <Clock className="w-3 h-3" />
-                        {post.readTime[lang]}
-                      </span>
+                        {post.title[lang]}
+                      </h3>
                     </div>
-                    <h3
-                      className="text-sm font-bold leading-snug mb-1 line-clamp-2"
-                      style={{ color: "var(--text)" }}
-                    >
-                      {post.title[lang]}
-                    </h3>
-                    <div className="flex items-center justify-between mt-2">
+                    <div className="flex items-center justify-between mt-3">
                       <span className="text-xs" style={{ color: "var(--text3)" }}>
                         {formatDate(post.date, lang)}
                       </span>
@@ -320,6 +314,7 @@ export default function Blog() {
               );
             })}
           </div>
+
         </div>
       </div>
     </section>

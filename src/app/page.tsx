@@ -9,8 +9,6 @@ import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
 import Blog from "@/components/Blog";
 import FAQ from "@/components/FAQ";
-import CTA from "@/components/CTA";
-
 export default function Home() {
   return (
     <main>
@@ -24,7 +22,6 @@ export default function Home() {
       <Testimonials />
       <Pricing />
       <FAQ />
-      <CTA />
       <Blog />
     </main>
   );
