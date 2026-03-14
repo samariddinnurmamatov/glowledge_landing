@@ -7,13 +7,13 @@ import { Lang } from "@/lib/i18n";
 import Link from "next/link";
 import {
   Moon, Sun, Menu, X, Sparkles, ChevronDown,
-  Brain, Bot, Tv, Server, FileText, ArrowRight,
+  Brain, Bot, Tv, Server, FileText, ArrowRight, Globe,
 } from "lucide-react";
 
-const LANGS: { code: Lang; label: string }[] = [
-  { code: "uz", label: "UZ" },
-  { code: "ru", label: "RU" },
-  { code: "en", label: "EN" },
+const LANGS: { code: Lang; label: string; full: string; flag: string }[] = [
+  { code: "uz", label: "UZ", full: "O'zbek",  flag: "🇺🇿" },
+  { code: "ru", label: "RU", full: "Русский",  flag: "🇷🇺" },
+  { code: "en", label: "EN", full: "English",  flag: "🇬🇧" },
 ];
 
 const products = [
@@ -68,8 +68,10 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsDrop, setProductsDrop] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [langDrop, setLangDrop] = useState(false);
   const [mounted, setMounted] = useState(false);
   const dropRef = useRef<HTMLDivElement>(null);
+  const langRef = useRef<HTMLDivElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -78,6 +80,19 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close lang dropdown on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangDrop(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const currentLang = LANGS.find((l) => l.code === lang) ?? LANGS[0];
 
   const openDrop = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -89,10 +104,10 @@ export default function Navbar() {
 
   const mainLinks = [
     { label: t.nav.solutions, href: "/solutions" },
-    { label: t.nav.pricing, href: "/pricing" },
-    { label: t.nav.blog, href: "/blog" },
-    { label: t.nav.about, href: "/about" },
-    { label: t.nav.contact, href: "/contact" },
+    { label: t.nav.pricing,   href: "/pricing" },
+    { label: t.nav.blog,      href: "/blog" },
+    { label: t.nav.about,     href: "/about" },
+    { label: t.nav.contact,   href: "/contact" },
   ];
 
   return (
@@ -194,22 +209,56 @@ export default function Navbar() {
 
         {/* ── Right controls ── */}
         <div className="flex items-center gap-2">
-          {/* Language */}
-          <div className="hidden sm:flex items-center rounded-lg p-1 gap-0.5" style={{ background: "var(--bg3)" }}>
-            {LANGS.map((l) => (
-              <button
-                key={l.code}
-                onClick={() => setLang(l.code)}
-                className="px-2.5 py-1 text-xs font-semibold rounded-md transition-all duration-200"
-                style={
-                  lang === l.code
-                    ? { background: "var(--bg2)", color: "var(--indigo)", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }
-                    : { color: "var(--text3)" }
-                }
+          {/* Language dropdown */}
+          <div ref={langRef} className="hidden sm:block relative">
+            <button
+              onClick={() => setLangDrop((v) => !v)}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-200 hover:scale-105"
+              style={{
+                background: "var(--bg3)",
+                color: "var(--text2)",
+                border: "1px solid var(--border)",
+              }}
+            >
+              <Globe className="w-3.5 h-3.5" style={{ color: "var(--indigo)" }} />
+              <span>{currentLang.label}</span>
+              <ChevronDown
+                className="w-3 h-3 transition-transform duration-200"
+                style={{
+                  transform: langDrop ? "rotate(180deg)" : "rotate(0deg)",
+                  color: "var(--text3)",
+                }}
+              />
+            </button>
+
+            {langDrop && (
+              <div
+                className="absolute top-full right-0 mt-1.5 w-40 rounded-xl border shadow-xl overflow-hidden"
+                style={{
+                  background: "var(--bg2)",
+                  borderColor: "var(--border)",
+                  boxShadow: "0 16px 40px rgba(0,0,0,0.18)",
+                }}
               >
-                {l.label}
-              </button>
-            ))}
+                {LANGS.map((l, i) => (
+                  <button
+                    key={l.code}
+                    onClick={() => { setLang(l.code); setLangDrop(false); }}
+                    className="w-full flex items-center gap-2.5 px-3.5 py-2.5 text-sm transition-all duration-150 hover:bg-white/5"
+                    style={{
+                      color: lang === l.code ? "var(--indigo)" : "var(--text2)",
+                      borderBottom: i < LANGS.length - 1 ? "1px solid var(--border)" : "none",
+                    }}
+                  >
+                    <span className="text-base">{l.flag}</span>
+                    <span className="font-medium flex-1 text-left">{l.full}</span>
+                    {lang === l.code && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 flex-shrink-0" />
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Theme */}
@@ -296,15 +345,19 @@ export default function Navbar() {
             ))}
 
             <div className="flex items-center gap-2 mt-3 pt-3 border-t" style={{ borderColor: "var(--border)" }}>
-              <div className="flex items-center rounded-lg p-1 gap-0.5" style={{ background: "var(--bg3)" }}>
+              <div className="flex items-center rounded-lg overflow-hidden" style={{ background: "var(--bg3)", border: "1px solid var(--border)" }}>
                 {LANGS.map((l) => (
                   <button
                     key={l.code}
                     onClick={() => setLang(l.code)}
-                    className="px-3 py-1.5 text-xs font-semibold rounded-md transition-all"
-                    style={lang === l.code ? { background: "var(--bg2)", color: "var(--indigo)" } : { color: "var(--text3)" }}
+                    className="flex items-center gap-1 px-2.5 py-2 text-xs font-semibold transition-all"
+                    style={lang === l.code
+                      ? { background: "var(--indigo)", color: "#fff" }
+                      : { color: "var(--text3)" }
+                    }
                   >
-                    {l.label}
+                    <span>{l.flag}</span>
+                    <span>{l.label}</span>
                   </button>
                 ))}
               </div>
