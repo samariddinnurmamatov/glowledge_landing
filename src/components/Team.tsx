@@ -4,7 +4,7 @@ import { useLang } from "@/context/LangContext";
 
 const teamMembers = [
   {
-    name: "Shahzod",
+    name: "Shahzod Alimardanov",
     role: { uz: "Asoschisi & CEO", ru: "Основатель & CEO", en: "Founder & CEO" },
     emoji: "⭐",
     gradient: "from-yellow-400 to-orange-500",
@@ -15,7 +15,7 @@ const teamMembers = [
     },
   },
   {
-    name: "Ali",
+    name: "Samariddin Nurmamatov",
     role: { uz: "Frontend & AI Engineer", ru: "Frontend & AI Engineer", en: "Frontend & AI Engineer" },
     emoji: "🚀",
     gradient: "from-blue-500 to-cyan-500",
@@ -26,8 +26,8 @@ const teamMembers = [
     },
   },
   {
-    name: "Rahmiddin",
-    role: { uz: "AI & Backend Engineer", ru: "AI & Backend Engineer", en: "AI & Backend Engineer" },
+    name: "Rahmiddin Dehqonov",
+    role: { uz: "AI Engineer", ru: "AI Engineer", en: "AI Engineer" },
     emoji: "🧠",
     gradient: "from-purple-500 to-pink-500",
     bio: {
@@ -37,7 +37,7 @@ const teamMembers = [
     },
   },
   {
-    name: "Mo'tabarxon",
+    name: "Mo\u02BBtabarxon Turdaliyeva",
     role: { uz: "UI/UX Designer", ru: "UI/UX Дизайнер", en: "UI/UX Designer" },
     emoji: "🌐",
     gradient: "from-green-500 to-teal-500",
@@ -48,7 +48,7 @@ const teamMembers = [
     },
   },
   {
-    name: "Diyorbek",
+    name: "Diyorbek Xazratqulov",
     role: { uz: "Backend Developer", ru: "Backend Developer", en: "Backend Developer" },
     emoji: "💎",
     gradient: "from-cyan-500 to-blue-600",
@@ -59,7 +59,7 @@ const teamMembers = [
     },
   },
   {
-    name: "Behruz",
+    name: "Bexruz Maxmudov",
     role: { uz: "AI Engineer", ru: "AI Engineer", en: "AI Engineer" },
     emoji: "⚡",
     gradient: "from-orange-500 to-red-500",
@@ -70,7 +70,7 @@ const teamMembers = [
     },
   },
   {
-    name: "Hamroh",
+    name: "Hamroh Print",
     role: { uz: "Evaluator", ru: "Оценщик", en: "Evaluator" },
     emoji: "🖨️",
     gradient: "from-violet-500 to-purple-600",
@@ -81,7 +81,7 @@ const teamMembers = [
     },
   },
   {
-    name: "Doniyor",
+    name: "Doniyorbek",
     role: { uz: "Finance", ru: "Финансы", en: "Finance" },
     emoji: "💰",
     gradient: "from-emerald-500 to-green-600",
