@@ -64,11 +64,11 @@ const audiences = [
     gradient: "from-cyan-500 to-blue-600",
     title: { uz: "Dasturchilar", ru: "Разработчики", en: "Developers" },
     desc: {
-      uz: "Presenton'ni Docker bilan o'z serveringizda ishlating. API integratsiya, open-source, cheksiz foydalanish.",
-      ru: "Запускайте Presenton с Docker на своём сервере. API интеграция, open-source, безлимитное использование.",
-      en: "Run Presenton with Docker on your own server. API integration, open-source, unlimited usage.",
+      uz: "SlaydPro'ni Docker bilan o'z serveringizda ishlating. API integratsiya, self-hosted, cheksiz foydalanish.",
+      ru: "Запускайте SlaydPro с Docker на своём сервере. API интеграция, self-hosted, безлимитное использование.",
+      en: "Run SlaydPro with Docker on your own server. API integration, self-hosted, unlimited usage.",
     },
-    products: ["Presenton", "API"],
+    products: ["SlaydPro", "API"],
     href: "/solutions#developers",
   },
 ];

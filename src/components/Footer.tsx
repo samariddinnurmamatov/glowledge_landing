@@ -30,7 +30,7 @@ export default function Footer() {
         { label: { uz: "SoddaAI", ru: "SoddaAI", en: "SoddaAI" }, href: "https://sodda.ai", external: true },
         { label: { uz: "AI Slide Bot", ru: "AI Slide Bot", en: "AI Slide Bot" }, href: "https://t.me/aislidebot", external: true },
         { label: { uz: "Slayd TOP", ru: "Slayd TOP", en: "Slayd TOP" }, href: "https://t.me/slaydtop", external: true },
-        { label: { uz: "Presenton", ru: "Presenton", en: "Presenton" }, href: "/products/presenton" },
+        { label: { uz: "SlaydPro", ru: "SlaydPro", en: "SlaydPro" }, href: "/products/slaydpro" },
         { label: { uz: "AI Docx Editor", ru: "AI Docx Editor", en: "AI Docx Editor" }, href: "/products/ai-docx-editor" },
         { label: { uz: "Barcha mahsulotlar →", ru: "Все продукты →", en: "All products →" }, href: "/products" },
       ],

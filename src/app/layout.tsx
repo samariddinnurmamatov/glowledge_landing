@@ -11,7 +11,7 @@ const geist = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Glowledge — O'zbekistonning #1 AI Ekotizimi",
   description:
-    "Glowledge AI ekotizimi: prezentatsiya, hujjat, insho, kurs ishi va 20+ turdagi kontent soniyalar ichida. SoddaAI, AI Slide Bot, Presenton va ko'proq.",
+    "Glowledge AI ekotizimi: prezentatsiya, hujjat, insho, kurs ishi va 20+ turdagi kontent soniyalar ichida. SoddaAI, AI Slide Bot, SlaydPro va ko'proq.",
   openGraph: {
     title: "Glowledge — O'zbekistonning #1 AI Ekotizimi",
     description: "5 ta AI mahsulot, 280K+ foydalanuvchi, UZ · RU · EN qo'llab-quvvatlash.",

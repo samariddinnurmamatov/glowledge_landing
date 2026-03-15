@@ -42,9 +42,9 @@ const products = [
     color: "from-purple-500 to-pink-500",
   },
   {
-    name: "Presenton",
-    desc: { uz: "Open-source Docker", ru: "Open-source Docker", en: "Open-source Docker" },
-    href: "/products/presenton",
+    name: "SlaydPro",
+    desc: { uz: "AI Prezentatsiya", ru: "AI Prezentatsiya", en: "AI Prezentatsiya" },
+    href: "/products/slaydpro",
     external: false,
     icon: Server,
     color: "from-green-500 to-emerald-500",

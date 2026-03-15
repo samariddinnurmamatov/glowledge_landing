@@ -92,8 +92,8 @@ export default function PricingPage() {
       a: { uz: "Pro 3,000 so'm/30 slayd — har safar 30 ta slayd to'plami sotib olasiz. Bu Telegram boti (@aislidebot) orqali amalga oshiriladi.", ru: "Pro 3 000 сум/30 слайдов — каждый раз покупаете пакет из 30 слайдов. Это осуществляется через Telegram бот (@aislidebot).", en: "Pro 3,000 UZS/30 slides — you buy a 30-slide pack each time. This is done through the Telegram bot (@aislidebot)." },
     },
     {
-      q: { uz: "Presenton narxi qancha?", ru: "Сколько стоит Presenton?", en: "How much does Presenton cost?" },
-      a: { uz: "Presenton to'liq bepul va open-source. Faqat o'z serveringiz xarajatlarini to'laysiz.", ru: "Presenton полностью бесплатный и open-source. Платите только за расходы своего сервера.", en: "Presenton is completely free and open-source. You only pay for your own server costs." },
+      q: { uz: "SlaydPro narxi qancha?", ru: "Сколько стоит SlaydPro?", en: "How much does SlaydPro cost?" },
+      a: { uz: "SlaydPro to'liq bepul va self-hosted. Faqat o'z serveringiz xarajatlarini to'laysiz.", ru: "SlaydPro полностью бесплатный и self-hosted. Платите только за расходы своего сервера.", en: "SlaydPro is completely free and self-hosted. You only pay for your own server costs." },
     },
     {
       q: { uz: "Bepul rejadan Pro ga qanday o'tish mumkin?", ru: "Как перейти с бесплатного на Pro?", en: "How to upgrade from Free to Pro?" },

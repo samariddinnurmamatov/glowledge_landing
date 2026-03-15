@@ -81,14 +81,14 @@ const faqs: { q: Record<Lang, string>; a: Record<Lang, string> }[] = [
   },
   {
     q: {
-      uz: "Presenton nima va u boshqalardan farqi?",
-      ru: "Что такое Presenton и чем он отличается?",
-      en: "What is Presenton and how is it different?",
+      uz: "SlaydPro nima va u boshqalardan farqi?",
+      ru: "Что такое SlaydPro и чем он отличается?",
+      en: "What is SlaydPro and how is it different?",
     },
     a: {
-      uz: "Presenton — ochiq kodli (open-source) AI prezentatsiya generatori. Uni o'z serveringizga Docker orqali o'rnatib, cheksiz va bepul foydalanishingiz mumkin. Bu ayniqsa katta tashkilotlar va dasturchilar uchun qulay.",
-      ru: "Presenton — open-source AI генератор презентаций. Его можно установить на свой сервер через Docker и использовать безлимитно и бесплатно. Это особенно удобно для крупных организаций и разработчиков.",
-      en: "Presenton is an open-source AI presentation generator. You can install it on your own server via Docker and use it unlimitedly for free. This is especially convenient for large organizations and developers.",
+      uz: "SlaydPro — AI prezentatsiya generatori. Uni o'z serveringizga Docker orqali o'rnatib, cheksiz va bepul foydalanishingiz mumkin. Bu ayniqsa katta tashkilotlar va dasturchilar uchun qulay.",
+      ru: "SlaydPro — AI генератор презентаций. Его можно установить на свой сервер через Docker и использовать безлимитно и бесплатно. Это особенно удобно для крупных организаций и разработчиков.",
+      en: "SlaydPro is an AI presentation generator. You can install it on your own server via Docker and use it unlimitedly for free. This is especially convenient for large organizations and developers.",
     },
   },
   {

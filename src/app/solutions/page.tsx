@@ -112,7 +112,7 @@ const audiences = [
     },
     products: [
       { name: "SoddaAI Enterprise", desc: { uz: "Jamoa uchun maxsus", ru: "Индивидуально для команды", en: "Custom for teams" }, href: "/contact", external: false },
-      { name: "Presenton", desc: { uz: "O'z serveringizda", ru: "На своём сервере", en: "On your own server" }, href: "/products/presenton", external: false },
+      { name: "SlaydPro", desc: { uz: "O'z serveringizda", ru: "На своём сервере", en: "On your own server" }, href: "/products/slaydpro", external: false },
     ],
   },
   {
@@ -128,9 +128,9 @@ const audiences = [
       en: "Organizations want their own AI presentation generator, but building from scratch is very complex and expensive. Dependency on third-party services is also a problem.",
     },
     solution: {
-      uz: "Presenton — open-source AI prezentatsiya generatori. Docker bilan bir buyruqda o'rnating. REST API orqali o'z tizimingizga ulang. Kodga to'liq kirish.",
-      ru: "Presenton — open-source AI генератор презентаций. Установите одной командой через Docker. Подключите к своей системе через REST API. Полный доступ к коду.",
-      en: "Presenton — open-source AI presentation generator. Install with one Docker command. Connect to your system via REST API. Full code access.",
+      uz: "SlaydPro — AI prezentatsiya generatori. Docker bilan bir buyruqda o'rnating. REST API orqali o'z tizimingizga ulang. Kodga to'liq kirish.",
+      ru: "SlaydPro — AI генератор презентаций. Установите одной командой через Docker. Подключите к своей системе через REST API. Полный доступ к коду.",
+      en: "SlaydPro — AI presentation generator. Install with one Docker command. Connect to your system via REST API. Full code access.",
     },
     workflow: {
       uz: ["GitHub dan yuklab olasiz", "Docker compose bilan ishga tushirasiz", "API kalitlarini sozlaysiz", "REST API orqali integratsiya qilasiz"],
@@ -138,7 +138,7 @@ const audiences = [
       en: ["Download from GitHub", "Start via Docker compose", "Configure API keys", "Integrate via REST API"],
     },
     products: [
-      { name: "Presenton", desc: { uz: "Open-source, Docker, API", ru: "Open-source, Docker, API", en: "Open-source, Docker, API" }, href: "/products/presenton", external: false },
+      { name: "SlaydPro", desc: { uz: "Self-hosted, Docker, API", ru: "Self-hosted, Docker, API", en: "Self-hosted, Docker, API" }, href: "/products/slaydpro", external: false },
       { name: "Enterprise API", desc: { uz: "Maxsus API integratsiya", ru: "Кастомная API интеграция", en: "Custom API integration" }, href: "/contact", external: false },
     ],
   },

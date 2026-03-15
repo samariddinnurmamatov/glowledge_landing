@@ -78,19 +78,19 @@ const productData: Record<string, {
       { q: { uz: "Qancha vaqt oladi?", ru: "Сколько времени занимает?", en: "How long does it take?" }, a: { uz: "O'rtacha 10-30 soniya. Ko'p hollarda bir daqiqadan kam.", ru: "В среднем 10-30 секунд. В большинстве случаев менее минуты.", en: "On average 10-30 seconds. In most cases under a minute." } },
     ],
   },
-  "presenton": {
-    name: "Presenton",
+  "slaydpro": {
+    name: "SlaydPro",
     icon: Server,
     gradient: "from-green-500 to-emerald-600",
-    tagline: { uz: "Open-source AI prezentatsiya generatori", ru: "Open-source AI генератор презентаций", en: "Open-source AI presentation generator" },
+    tagline: { uz: "AI prezentatsiya generatori", ru: "AI генератор презентаций", en: "AI presentation generator" },
     hero: { uz: "O'z Serveringizda AI Prezentatsiya", ru: "AI Презентации на Вашем Сервере", en: "AI Presentations on Your Own Server" },
     problem: {
-      uz: "Katta tashkilotlar ma'lumotlarini uchinchi shaxslarga berishdan xavotirlanadi. Presenton bu muammoni hal qiladi — barcha hisoblash o'z serveringizda amalga oshiriladi.",
-      ru: "Крупные организации беспокоятся о передаче данных третьим лицам. Presenton решает эту проблему — все вычисления выполняются на вашем сервере.",
-      en: "Large organizations worry about sharing data with third parties. Presenton solves this — all computation happens on your own server.",
+      uz: "Katta tashkilotlar ma'lumotlarini uchinchi shaxslarga berishdan xavotirlanadi. SlaydPro bu muammoni hal qiladi — barcha hisoblash o'z serveringizda amalga oshiriladi.",
+      ru: "Крупные организации беспокоятся о передаче данных третьим лицам. SlaydPro решает эту проблему — все вычисления выполняются на вашем сервере.",
+      en: "Large organizations worry about sharing data with third parties. SlaydPro solves this — all computation happens on your own server.",
     },
     features: [
-      { icon: "🔓", title: { uz: "To'liq Open-source", ru: "Полностью Open-source", en: "Fully Open-source" }, desc: { uz: "GitHub da mavjud, istalgan vaqt kodga kirishingiz mumkin.", ru: "Доступно на GitHub, полный доступ к коду в любое время.", en: "Available on GitHub, full code access at any time." } },
+      { icon: "🔓", title: { uz: "To'liq Self-hosted", ru: "Полностью Self-hosted", en: "Fully Self-hosted" }, desc: { uz: "GitHub da mavjud, istalgan vaqt kodga kirishingiz mumkin.", ru: "Доступно на GitHub, полный доступ к коду в любое время.", en: "Available on GitHub, full code access at any time." } },
       { icon: "🐳", title: { uz: "Docker bilan", ru: "Через Docker", en: "Via Docker" }, desc: { uz: "Bir docker-compose buyrug'i bilan ishlata boshlang.", ru: "Запустите одной командой docker-compose.", en: "Start with a single docker-compose command." } },
       { icon: "♾️", title: { uz: "Cheksiz Foydalanish", ru: "Безлимитное Использование", en: "Unlimited Usage" }, desc: { uz: "O'z serveringizda cheksiz prezentatsiya yarating.", ru: "Создавайте неограниченное количество презентаций на своём сервере.", en: "Create unlimited presentations on your own server." } },
       { icon: "🔒", title: { uz: "Ma'lumotlar Xavfsiz", ru: "Данные в Безопасности", en: "Data is Safe" }, desc: { uz: "Barcha ma'lumotlar faqat sizning serveringizda saqlanadi.", ru: "Все данные хранятся только на вашем сервере.", en: "All data is stored only on your server." } },
@@ -102,8 +102,8 @@ const productData: Record<string, {
       { step: "2", title: { uz: "Kodni Yuklab Oling", ru: "Скачайте Код", en: "Download Code" }, desc: { uz: "GitHub dan repositoriyani clone qiling.", ru: "Клонируйте репозиторий с GitHub.", en: "Clone the repository from GitHub." } },
       { step: "3", title: { uz: "Ishga Tushiring", ru: "Запустите", en: "Start" }, desc: { uz: "docker-compose up buyrug'ini bajaring va tayyor!", ru: "Выполните docker-compose up и готово!", en: "Run docker-compose up and you're ready!" } },
     ],
-    pricing: { uz: "Presenton to'liq bepul va open-source. Faqat o'z serveringiz va AI API xarajatlarini to'lang.", ru: "Presenton полностью бесплатный и open-source. Платите только за свой сервер и AI API.", en: "Presenton is completely free and open-source. Only pay for your own server and AI API costs." },
-    href: "https://github.com/glowledge/presenton",
+    pricing: { uz: "SlaydPro to'liq bepul va self-hosted. Faqat o'z serveringiz va AI API xarajatlarini to'lang.", ru: "SlaydPro полностью бесплатный и self-hosted. Платите только за свой сервер и AI API.", en: "SlaydPro is completely free and self-hosted. Only pay for your own server and AI API costs." },
+    href: "https://github.com/glowledge/slaydpro",
     external: true,
     faq: [
       { q: { uz: "Qaysi AI modellarni qo'llab-quvvatlaydi?", ru: "Какие AI модели поддерживаются?", en: "Which AI models are supported?" }, a: { uz: "Google Gemini, OpenAI GPT va Anthropic Claude modellarini qo'llab-quvvatlaydi.", ru: "Поддерживает модели Google Gemini, OpenAI GPT и Anthropic Claude.", en: "Supports Google Gemini, OpenAI GPT and Anthropic Claude models." } },

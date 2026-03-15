@@ -68,10 +68,10 @@ export default function AboutPage() {
                 </p>
                 <p>
                   {lang === "uz"
-                    ? "Bugun Glowledge 280,000+ foydalanuvchi bilan O'zbekistoning #1 AI ekotizimiga aylandi. SoddaAI, AI Slide Bot, Slayd TOP, Presenton va AI Docx Editor — har biri o'z auditoriyasiga xizmat qiladi."
+                    ? "Bugun Glowledge 280,000+ foydalanuvchi bilan O'zbekistoning #1 AI ekotizimiga aylandi. SoddaAI, AI Slide Bot, Slayd TOP, SlaydPro va AI Docx Editor — har biri o'z auditoriyasiga xizmat qiladi."
                     : lang === "ru"
-                    ? "Сегодня Glowledge с 280 000+ пользователями стала AI экосистемой №1 в Узбекистане. SoddaAI, AI Slide Bot, Slayd TOP, Presenton и AI Docx Editor — каждый служит своей аудитории."
-                    : "Today Glowledge with 280,000+ users has become Uzbekistan's #1 AI ecosystem. SoddaAI, AI Slide Bot, Slayd TOP, Presenton and AI Docx Editor — each serving its audience."}
+                    ? "Сегодня Glowledge с 280 000+ пользователями стала AI экосистемой №1 в Узбекистане. SoddaAI, AI Slide Bot, Slayd TOP, SlaydPro и AI Docx Editor — каждый служит своей аудитории."
+                    : "Today Glowledge with 280,000+ users has become Uzbekistan's #1 AI ecosystem. SoddaAI, AI Slide Bot, Slayd TOP, SlaydPro and AI Docx Editor — each serving its audience."}
                 </p>
               </div>
             </div>

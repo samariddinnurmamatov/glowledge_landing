@@ -10,48 +10,57 @@ const products = [
   { name: "SoddaAI", icon: Brain, color: "#6366f1", bg: "rgba(99,102,241,0.12)" },
   { name: "AI Slide Bot", icon: Bot, color: "#06b6d4", bg: "rgba(6,182,212,0.12)" },
   { name: "Slayd TOP", icon: Tv, color: "#8b5cf6", bg: "rgba(139,92,246,0.12)" },
-  { name: "Presenton", icon: Server, color: "#10b981", bg: "rgba(16,185,129,0.12)" },
+  { name: "SlaydPro", icon: Server, color: "#10b981", bg: "rgba(16,185,129,0.12)" },
   { name: "AI Docx Editor", icon: FileText, color: "#f59e0b", bg: "rgba(245,158,11,0.12)" },
 ];
 
 const avatarColors = ["#6366f1", "#8b5cf6", "#06b6d4", "#10b981", "#f59e0b"];
 
-const copy: Record<Lang3, { badge: string; h1a: string; h1b: string; sub: string; cta1: string; cta2: string; trust: string; tagA: string; tagB: string; tagC: string }> = {
+const copy: Record<Lang3, { badge: string; h1a: string; h1b: string; sub: string; cta1: string; cta2: string; trust: string; tagA: string; tagB: string; tagC: string; trustA: string; trustB: string; trustC: string }> = {
   uz: {
-    badge: "O'zbekistonning #1 AI Ekotizimi",
-    h1a: "Kontent Yaratishni",
-    h1b: "AI ga Ishoning",
-    sub: "Glowledge — 5 ta kuchli AI mahsulot bitta ekotizimda. Prezentatsiya, hujjat, insho, kurs ishi va ko'proqni soniyalar ichida. O'zbek, Rus, Ingliz tillarida.",
-    cta1: "Bepul Boshlash",
+    badge: "280,000+ foydalanuvchi ishonadi · O'zbekiston #1",
+    h1a: "Prezentatsiya, hujjat, insho —",
+    h1b: "30 soniyada tayyor",
+    sub: "Mavzu yozing → AI professional kontent yaratadi → PPTX, PDF, DOCX yuklab oling. O'zbek, Rus, Ingliz tillarida.",
+    cta1: "Bepul Sinab Ko'rish",
     cta2: "Mahsulotlarni Ko'rish",
     trust: "foydalanuvchi ishonadi",
     tagA: "PPTX · PDF · DOCX",
     tagB: "UZ · RU · EN",
     tagC: "Gemini · GPT-4 · Claude",
+    trustA: "✓ Kredit karta kerak emas",
+    trustB: "✓ 30 soniyada natija",
+    trustC: "✓ 60+ shablon",
   },
   ru: {
-    badge: "AI Экосистема №1 в Узбекистане",
-    h1a: "Создание Контента",
-    h1b: "Доверьте Искусственному Интеллекту",
-    sub: "Glowledge — 5 мощных AI продуктов в одной экосистеме. Презентации, документы, эссе и многое другое за секунды. На узбекском, русском и английском.",
-    cta1: "Начать Бесплатно",
+    badge: "280 000+ пользователей доверяют · №1 в Узбекистане",
+    h1a: "Презентация, документ, эссе —",
+    h1b: "готово за 30 секунд",
+    sub: "Введите тему → ИИ создаёт профессиональный контент → Скачайте PPTX, PDF или DOCX. На узбекском, русском, английском.",
+    cta1: "Попробовать Бесплатно",
     cta2: "Смотреть Продукты",
     trust: "пользователей доверяют",
     tagA: "PPTX · PDF · DOCX",
     tagB: "UZ · RU · EN",
     tagC: "Gemini · GPT-4 · Claude",
+    trustA: "✓ Без кредитной карты",
+    trustB: "✓ Результат за 30 секунд",
+    trustC: "✓ 60+ шаблонов",
   },
   en: {
-    badge: "Uzbekistan's #1 AI Ecosystem",
-    h1a: "Leave Content Creation",
-    h1b: "to Artificial Intelligence",
-    sub: "Glowledge — 5 powerful AI products in one ecosystem. Presentations, documents, essays and more in seconds. In Uzbek, Russian and English.",
-    cta1: "Start for Free",
+    badge: "280,000+ users trust us · Uzbekistan's #1",
+    h1a: "Presentations, documents, essays —",
+    h1b: "ready in 30 seconds",
+    sub: "Enter a topic → AI creates professional content → Download PPTX, PDF or DOCX. In Uzbek, Russian, English.",
+    cta1: "Try for Free",
     cta2: "View Products",
     trust: "users trust us",
     tagA: "PPTX · PDF · DOCX",
     tagB: "UZ · RU · EN",
     tagC: "Gemini · GPT-4 · Claude",
+    trustA: "✓ No credit card",
+    trustB: "✓ Result in 30 seconds",
+    trustC: "✓ 60+ templates",
   },
 };
 
@@ -119,6 +128,13 @@ export default function Hero() {
               {tag}
             </span>
           ))}
+        </div>
+
+        {/* Trust micro-copy */}
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 mb-8 text-xs" style={{ color: "var(--text3)" }}>
+          <span>{c.trustA}</span>
+          <span>{c.trustB}</span>
+          <span>{c.trustC}</span>
         </div>
 
         {/* CTA Buttons */}

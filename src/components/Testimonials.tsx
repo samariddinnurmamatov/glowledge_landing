@@ -56,12 +56,12 @@ const testimonials = [
     name: "Akbar N.",
     role: { uz: "Dasturchi, Namangan", ru: "Программист, Наманган", en: "Developer, Namangan" },
     text: {
-      uz: "Presenton open-source ekanligi juda yaxshi! O'z serverimda o'rnatdim, Docker bilan juda oson bo'ldi.",
-      ru: "Отлично, что Presenton open-source! Установил на свой сервер, с Docker всё прошло очень легко.",
-      en: "Great that Presenton is open-source! Installed on my own server, it was very easy with Docker.",
+      uz: "SlaydPro juda qulay! O'z serverimda o'rnatdim, Docker bilan juda oson bo'ldi.",
+      ru: "SlaydPro очень удобен! Установил на свой сервер, с Docker всё прошло очень легко.",
+      en: "SlaydPro is great! Installed on my own server, it was very easy with Docker.",
     },
     rating: 5,
-    product: "Presenton",
+    product: "SlaydPro",
     color: "#06b6d4",
   },
   {

@@ -96,8 +96,8 @@ const categories = [
     label: { uz: "Texnik", ru: "Техническое", en: "Technical" },
     faqs: [
       {
-        q: { uz: "Presenton ni qanday o'rnatish kerak?", ru: "Как установить Presenton?", en: "How to install Presenton?" },
-        a: { uz: "1. GitHub dan yuklab oling. 2. Docker o'rnating. 3. .env faylida API kalitlarini kiriting. 4. docker-compose up -d bajaring. Batafsil: /products/presenton", ru: "1. Скачайте с GitHub. 2. Установите Docker. 3. Введите API ключи в .env файле. 4. Выполните docker-compose up -d. Подробнее: /products/presenton", en: "1. Download from GitHub. 2. Install Docker. 3. Enter API keys in .env file. 4. Run docker-compose up -d. More details: /products/presenton" },
+        q: { uz: "SlaydPro ni qanday o'rnatish kerak?", ru: "Как установить SlaydPro?", en: "How to install SlaydPro?" },
+        a: { uz: "1. GitHub dan yuklab oling. 2. Docker o'rnating. 3. .env faylida API kalitlarini kiriting. 4. docker-compose up -d bajaring. Batafsil: /products/slaydpro", ru: "1. Скачайте с GitHub. 2. Установите Docker. 3. Введите API ключи в .env файле. 4. Выполните docker-compose up -d. Подробнее: /products/slaydpro", en: "1. Download from GitHub. 2. Install Docker. 3. Enter API keys in .env file. 4. Run docker-compose up -d. More details: /products/slaydpro" },
       },
       {
         q: { uz: "API integratsiya qanday ishlaydi?", ru: "Как работает API интеграция?", en: "How does API integration work?" },

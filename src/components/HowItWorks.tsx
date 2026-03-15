@@ -60,6 +60,14 @@ export default function HowItWorks() {
                   className="rounded-2xl border p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 w-full"
                   style={{ background: "var(--surface)", borderColor: "var(--border)" }}
                 >
+                  {"label" in step && step.label && (
+                    <span
+                      className="inline-block text-xs font-bold px-2.5 py-1 rounded-lg mb-3"
+                      style={{ background: `rgba(99,102,241,0.1)`, color: "var(--indigo)" }}
+                    >
+                      {step.label as string}
+                    </span>
+                  )}
                   <h3 className="text-lg font-bold mb-3" style={{ color: "var(--text)" }}>
                     {step.title}
                   </h3>
@@ -98,7 +106,7 @@ export default function HowItWorks() {
               ))}
             </div>
             <span className="text-sm font-semibold" style={{ color: "var(--indigo)" }}>
-              O&apos;rtacha vaqt: ~15 soniya
+              {t.howItWorks.subtitle}
             </span>
           </div>
         </div>
